@@ -3,7 +3,7 @@
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>关于 | Gridea</title>
-<link rel="shortcut icon" href="https://liujian1997.github.io/favicon.ico?v=1585698086055">
+<link rel="shortcut icon" href="https://liujian1997.github.io/favicon.ico?v=1585698544065">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://liujian1997.github.io/styles/main.css">
 <link rel="alternate" type="application/atom+xml" title="关于 | Gridea - Atom Feed" href="https://liujian1997.github.io/atom.xml">
@@ -28,7 +28,7 @@
       <div class="main-content">
         <div class="site-header">
   <a href="https://liujian1997.github.io">
-  <img class="avatar" src="https://liujian1997.github.io/images/avatar.png?v=1585698086055" alt="">
+  <img class="avatar" src="https://liujian1997.github.io/images/avatar.png?v=1585698544065" alt="">
   </a>
   <h1 class="site-title">
     Gridea
@@ -123,6 +123,32 @@
 
         
 
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '201eea3d13dc5c039c1b',
+    clientSecret: '24aefac51864a27f9b0bfac59f731b3d99106eed',
+    repo: 'Liujian1997.github.io',
+    owner: 'Liujian1997',
+    admin: ['Liujian1997'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
         
 
         <div class="site-footer">
