@@ -1,0 +1,622 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>【数据结构】线性表 | Liujian&#39;Blog</title>
+<link rel="shortcut icon" href="https://liujian1997.github.io/favicon.ico?v=1585701468037">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://liujian1997.github.io/styles/main.css">
+<link rel="alternate" type="application/atom+xml" title="【数据结构】线性表 | Liujian&#39;Blog - Atom Feed" href="https://liujian1997.github.io/atom.xml">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
+
+
+
+    <meta name="description" content="
+🔑【数据结构】之线性表
+
+
+线性表
+知识点讲解
+线性表的基本概念与实现
+
+线性表的定义：
+线性表是具有相同特性数据元素的一个有限序列，该序列中所含元素的个数叫做线性表的长度，用n  (n&gt;=0)来表示，n可以等于0，表示一个空表。..." />
+    <meta name="keywords" content="计算机考研" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+    <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+  </head>
+  <body>
+    <div class="main">
+      <div class="main-content">
+        <div class="site-header">
+  <a href="https://liujian1997.github.io">
+  <img class="avatar" src="https://liujian1997.github.io/images/avatar.png?v=1585701468037" alt="">
+  </a>
+  <h1 class="site-title">
+    Liujian&#39;Blog
+  </h1>
+  <p class="site-description">
+    温故而知新
+  </p>
+  <div class="menu-container">
+    
+      
+        <a href="/" class="menu">
+          首页
+        </a>
+      
+    
+      
+        <a href="/archives" class="menu">
+          归档
+        </a>
+      
+    
+      
+        <a href="/tags" class="menu">
+          标签
+        </a>
+      
+    
+      
+        <a href="/post/about" class="menu">
+          关于
+        </a>
+      
+    
+  </div>
+  <div class="social-container">
+    
+      
+    
+      
+    
+      
+    
+      
+    
+      
+    
+  </div>
+</div>
+
+        <div class="post-detail">
+          <article class="post">
+            <h2 class="post-title">
+              【数据结构】线性表
+            </h2>
+            <div class="post-info">
+              <span>
+                2020-04-01
+              </span>
+              <span>
+                8 min read
+              </span>
+              
+                <a href="https://liujian1997.github.io/tag/2j1eKpJzW/" class="post-tag">
+                  # 计算机考研
+                </a>
+              
+            </div>
+            
+              <img class="post-feature-image" src="https://liujian1997.github.io/post-images/5.jpg" alt="">
+            
+            <div class="post-content-wrapper">
+              <div class="post-content">
+                <blockquote>
+<p>🔑【数据结构】之<strong>线性表</strong></p>
+</blockquote>
+<!--more-->
+<h1 id="线性表">线性表</h1>
+<h2 id="知识点讲解">知识点讲解</h2>
+<h3 id="线性表的基本概念与实现">线性表的基本概念与实现</h3>
+<ol>
+<li>线性表的定义：<br>
+线性表是具有<strong>相同特性</strong>数据元素的一个<strong>有限</strong>序列，该序列中所含元素的<strong>个数</strong>叫做线性表的长度，用n  (n&gt;=0)来表示，n可以等于0，表示一个空表。</li>
+<li>逻辑特性<br>
+只有一个表头元素，只有一个表尾元素，表头元素没有前驱，表尾元素没有后继，其他元素只有唯一前驱唯一后继。</li>
+<li>存储结构<br>
+分为顺序存储结构和链式存储结构，前者称为顺序表，后者称为链表
+<ul>
+<li><strong>顺序表</strong><br>
+按照逻辑顺序，依次存储从存储到从指定的存储位置开始的一块连续的存储空间中，第一个元素的存储位置就是指定的存储位置</li>
+<li><strong>链表</strong><br>
+每一个结点不仅包含所含元素的信息，还包含元素之间的逻辑关系。（data和指针）</li>
+</ul>
+</li>
+<li>顺序表和链表的<strong>比较</strong>
+<ul>
+<li>基于空间
+<ul>
+<li>存储分配的方式：顺序表是<strong>一次分配</strong>的，链表是<strong>多次分配</strong>的</li>
+<li>存储密度（结点值域/总的存储量）：顺序表=1；链表&lt;1（有指针）</li>
+</ul>
+</li>
+<li>基于时间
+<ul>
+<li>存取方式：顺序表随机存取，也可以顺序存取；链表<strong>只能顺序存取</strong>，时间复杂度都是O（n）</li>
+<li>插入/删除是要移动元素的个数：顺序表平均近一半的元素，链表不需要移动，只需修改指针</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>链表有以下五种形式：
+<ul>
+<li>
+<p>单链表</p>
+<ul>
+<li>带头结点：头指针指向头结点，头结点不含任何信息，从头结点的后继结点开始存储信息，head始终不等于NULL，当head-&gt;next等于NULL时，链表为空</li>
+<li>不带头结点：head直接指向开始结点，head等于NULL时，链表为空</li>
+</ul>
+</li>
+<li>
+<p>双链表<br>
+在单链表基础上增添了一个指针域，指向当前结点的前驱</p>
+</li>
+<li>
+<p>循环链表</p>
+<ul>
+<li>将单链表的最后一个指针域指向链表的第一个结点</li>
+<li><strong>带头结点</strong> head=head-&gt;next链表为空；<strong>不带头结点</strong>head=NULL 链表为空</li>
+</ul>
+</li>
+<li>
+<p>循环双链表</p>
+<ul>
+<li>将终端结点的next指针指向链表第一个结点，将第一个结点的prior指针指向最后一个结点</li>
+<li><strong>不带头结点</strong>head等于NULL时为空，<strong>带头结点</strong>head-&gt;next,head-&gt;prior都指向head结点</li>
+<li>以下四句都可以判断循环双链表为空：</li>
+</ul>
+<pre><code class="language-c">head-&gt;next==head;
+head-&gt;prior==head;
+head-&gt;next==head&amp;&amp;head-&gt;prior==head;
+head-&gt;next==head||head-&gt;prior==head;
+</code></pre>
+</li>
+<li>
+<p>静态链表</p>
+<ul>
+<li>借助一维数组来表示</li>
+<li>一般链表结点空间来自整个内存，静态链表来自于一个结构体数组</li>
+<li>每个结点包含两个分量，一个时数据元素分量，一个是指针分量</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h2 id="线性表的结构体定义和基本操作">线性表的结构体定义和基本操作</h2>
+<h3 id="线性表的结构体定义">线性表的结构体定义</h3>
+<ul>
+<li>
+<p>顺序表</p>
+<pre><code class="language-c">typedef struct
+{
+    int data[maxSize];
+    int length;
+}Sqllist;
+</code></pre>
+</li>
+<li>
+<p>单链表结点定义</p>
+<pre><code class="language-c">typedef struct LNode
+{
+    int data;
+    struct LNode *next;
+}LNode //定义单链表结点类型
+</code></pre>
+</li>
+<li>
+<p>双链表结点定义</p>
+<pre><code class="language-c"> typedef struct DLNode
+{
+    int data;
+    struct DLNode *next;
+    struct DLNode *prior;
+}DLNode 
+</code></pre>
+<p>建立新结点<br>
+<code>LNode *A=(LNode *)malloc(sizeof(LNode));</code></p>
+</li>
+</ul>
+<h2 id="顺序表的操作">顺序表的操作</h2>
+<ul>
+<li>
+<p>查找</p>
+<pre><code class="language-c">int finddata(SqList L,int e)
+{
+    int i;
+    for(i=0;i&lt;n;i++)
+    if(L.data[i]==e)
+    return i+1;
+    return 0;
+}
+</code></pre>
+</li>
+<li>
+<p>插入</p>
+<pre><code class="language-c">//在第i个位置插入新元素e，如果i不合法，返回false，否则将第i个元素以及之后的元素右移一个空出一个位置插入e，顺序表长度加一
+bool ListInsert(SqList &amp;L,int i, int e)
+{
+    int j;
+    if(i&gt;=listsize||i&lt;1||i&gt;L.length+1)
+    return false;
+    for(j=L.length;j&gt;=i;--j)
+    {
+        L.data[j]=L.data[j-1];
+    }
+    L.data[i-1]=e;
+    L.length++;
+    return true;
+}
+
+</code></pre>
+</li>
+<li>
+<p>删除</p>
+<pre><code class="language-c">bool ListDelete(SqList &amp;L,int i, int &amp;e )
+{
+    if(i&gt;=listsize||i&lt;1||i&gt;L.length+1)
+    return false;
+    e=L.data[i-1];
+    for(j=i;j&lt;L.length;++j)
+    {
+        L.data[j-1]=L.data[j];
+    }
+    L.length--;
+    return true;
+}
+</code></pre>
+</li>
+<li>
+<p>算法分析</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">插入</th>
+<th style="text-align:center">删除</th>
+<th style="text-align:center">查找</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>平均移动次数</td>
+<td style="text-align:center">n/2</td>
+<td style="text-align:center">(n-1)/2</td>
+<td style="text-align:center">(n-1)/2</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<h2 id="单链表的操作有头">单链表的操作（有头）</h2>
+<ul>
+<li>插入<pre><code class="language-c">//头插法
+void createlist1(LNode *&amp;L, int n)
+{
+    LNode *s;
+    int x;
+    L=(LNode*)malloc(sizeof(LNode));
+    L-&gt;next=NULL;
+    for(int i=0;i&lt;n;i++)
+    {   
+        scanf(&quot;%d&quot;,&amp;x);
+        s=(LNode*)malloc(sizeof(LNode));
+        s-&gt;data=x;
+        s-&gt;next=L-&gt;next;
+        L-&gt;next=s;
+    }
+    return L;
+}
+</code></pre>
+<pre><code class="language-c">//尾插法(将新节点插入到当前列表的表尾上，必须在增加一个尾指针r指向表尾)
+void createlist2(LNode *&amp;l, int n)
+{
+    LNode *s,*r;
+    int x;
+    L=(LNode*)malloc(sizeof(LNode));
+    LNode-&gt;next=NULL;
+    r=L;
+    for(int i=0;i&lt;n;i++)
+    {
+        scanf(&quot;%d&quot;,&amp;x);
+        s=(LNode*)malloc(sizeof(LNode));
+        s-&gt;data=x;
+        s-&gt;next=r-&gt;next;
+        r-&gt;next=s;
+        r=s;
+    }
+    r-&gt;next=NULL;
+    return L;
+}
+</code></pre>
+</li>
+<li>查找<pre><code class="language-c">//按序号查找
+LNode *GetElem(Linklist L,int i)
+{
+    LNode *p=L-&gt;next;
+    int j=1;
+    while(p&amp;&amp;j&lt;i)
+    {
+        p=p-&gt;next;
+        j++;
+    }
+    if(p&amp;&amp;j==i)
+    return p;
+    else return 0;
+}
+</code></pre>
+<pre><code class="language-c">//按值查找
+LinkList *find(LinkList L,ElemType e)
+{
+    LNode *p=LinkList-&gt;next;
+    while(p&amp;&amp;p-&gt;data!=e)
+    p=p-&gt;next;
+    if(p&amp;&amp;p-&gt;data==e)
+    return p;
+    else return 0;
+}
+</code></pre>
+</li>
+<li>插入<pre><code class="language-c">bool ListInsert(LinkList &amp;L, int i, ElemType e)
+{
+    LNode *s,*p=L;
+    int j=0;
+    while(p&amp;&amp;j&lt;i-1)
+    {
+        p=p-&gt;next;
+        j++;
+    }
+    if(p&amp;&amp;j=i-1)
+    {
+        s=(LinkList)malloc(sizeof(LNode));
+        s-&gt;data=e;
+        s-&gt;next=p-&gt;next;
+        p-&gt;next=s;
+        retrun true;
+    }
+    else 
+        return false;
+}
+</code></pre>
+</li>
+<li>删除结点<pre><code class="language-c">bool ListDelete(LinkList &amp;L,int i, int &amp;e)
+{
+    LNode *s,*p=L;
+    int j=0;
+    while(p&amp;&amp;j&lt;i-1)
+    {
+        p=p-&gt;next;
+        j++;
+    }
+    if(p&amp;&amp;j==i-1)
+    {
+        s=p-&gt;next;
+        p-&gt;next=s-&gt;next;
+        e=s-&gt;data;
+        free(s);
+        return true;
+    }
+    else return false;
+}
+</code></pre>
+</li>
+</ul>
+<h2 id="循环链表">循环链表</h2>
+<ul>
+<li>循环链表最后一个结点指向头结点</li>
+<li>循环单链表可以不设头指针，而只设尾指针</li>
+</ul>
+<h2 id="双向链表">双向链表</h2>
+<ul>
+<li>在单链表基础上对每个结点增加前驱指针 <strong>prior</strong></li>
+<li>插入删除</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>p之后插入s</th>
+<th>p之前插入s</th>
+<th>删除p之后继s</th>
+<th>删除p</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>s-&gt;next=p-&gt;next;<br>p-&gt;next=s;<br>s-&gt;prior=p;<br>s-&gt;next-&gt;prior=s;</td>
+<td>s-&gt;prior=p-&gt;prior;<br>p-&gt;prior=s;<br>s-&gt;next=p;<br>s-&gt;prior-&gt;next=s;</td>
+<td>s=p-&gt;next;<br>p-&gt;next=s-&gt;next;<br>p-&gt;next-&gt;prior=p</td>
+<td>p-&gt;prior-&gt;next=p-&gt;next;<br>p-&gt;next-&gt;prior=p-&gt;prior;</td>
+</tr>
+</tbody>
+</table>
+<h2 id="静态链表">静态链表</h2>
+<pre><code class="language-c">#define MAXSIZE 1000
+typedef struct {
+    ElemType data;
+    int cur;
+}component,SLinkList[MAXSIZE];
+</code></pre>
+<ul>
+<li>实例</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>data</th>
+<th>next</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td></td>
+<td>2</td>
+</tr>
+<tr>
+<td>1</td>
+<td>b</td>
+<td>6</td>
+</tr>
+<tr>
+<td>2</td>
+<td>a</td>
+<td>1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>d</td>
+<td>-1</td>
+</tr>
+</tbody>
+</table>
+<p>静态链表以next=-1作为结束标志，静态链表的插入、删除与动态链表相同，<strong>只需修改指针，不需要移动元素</strong></p>
+<h2 id="顺序表与单链表的比较">顺序表与单链表的比较</h2>
+<table>
+<thead>
+<tr>
+<th>顺序表</th>
+<th>单链表</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>以地址相邻表示关系</td>
+<td>用指针表示关系</td>
+</tr>
+<tr>
+<td>随机访问，取元素时间复杂度为<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mn>1</mn><mo>)</mo></mrow><annotation encoding="application/x-tex">O(1)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord">1</span><span class="mclose">)</span></span></span></span></td>
+<td>顺序访问，取时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+</tr>
+<tr>
+<td>插入、删除、需要移动元素，时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></td>
+<td>插入、删除不用移动元素，时间复杂度<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>（用于查找位置）</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>总结：需要反复插入、删除、用链表；反复提取，很少插入、删除用顺序表</li>
+</ul>
+
+              </div>
+              <div class="toc-container">
+                <ul class="markdownIt-TOC">
+<li><a href="#%E7%BA%BF%E6%80%A7%E8%A1%A8">线性表</a>
+<ul>
+<li><a href="#%E7%9F%A5%E8%AF%86%E7%82%B9%E8%AE%B2%E8%A7%A3">知识点讲解</a>
+<ul>
+<li><a href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5%E4%B8%8E%E5%AE%9E%E7%8E%B0">线性表的基本概念与实现</a></li>
+</ul>
+</li>
+<li><a href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89%E5%92%8C%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C">线性表的结构体定义和基本操作</a>
+<ul>
+<li><a href="#%E7%BA%BF%E6%80%A7%E8%A1%A8%E7%9A%84%E7%BB%93%E6%9E%84%E4%BD%93%E5%AE%9A%E4%B9%89">线性表的结构体定义</a></li>
+</ul>
+</li>
+<li><a href="#%E9%A1%BA%E5%BA%8F%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C">顺序表的操作</a></li>
+<li><a href="#%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%93%8D%E4%BD%9C%E6%9C%89%E5%A4%B4">单链表的操作（有头）</a></li>
+<li><a href="#%E5%BE%AA%E7%8E%AF%E9%93%BE%E8%A1%A8">循环链表</a></li>
+<li><a href="#%E5%8F%8C%E5%90%91%E9%93%BE%E8%A1%A8">双向链表</a></li>
+<li><a href="#%E9%9D%99%E6%80%81%E9%93%BE%E8%A1%A8">静态链表</a></li>
+<li><a href="#%E9%A1%BA%E5%BA%8F%E8%A1%A8%E4%B8%8E%E5%8D%95%E9%93%BE%E8%A1%A8%E7%9A%84%E6%AF%94%E8%BE%83">顺序表与单链表的比较</a></li>
+</ul>
+</li>
+</ul>
+
+              </div>
+            </div>
+          </article>
+        </div>
+
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://liujian1997.github.io/post/4/">
+              <h3 class="post-title">
+                【数据结构】图
+              </h3>
+            </a>
+          </div>
+        
+
+        
+          
+            <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+
+  var gitalk = new Gitalk({
+    clientID: '201eea3d13dc5c039c1b',
+    clientSecret: '24aefac51864a27f9b0bfac59f731b3d99106eed',
+    repo: 'Liujian1997.github.io',
+    owner: 'Liujian1997',
+    admin: ['Liujian1997'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+
+  gitalk.render('gitalk-container')
+
+</script>
+
+          
+
+          
+        
+
+        <div class="site-footer">
+  Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+  <a class="rss" href="https://liujian1997.github.io/atom.xml" target="_blank">
+    <i class="ri-rss-line"></i> RSS
+  </a>
+</div>
+
+      </div>
+    </div>
+
+    <script>
+      hljs.initHighlightingOnLoad()
+
+      let mainNavLinks = document.querySelectorAll(".markdownIt-TOC a");
+
+      // This should probably be throttled.
+      // Especially because it triggers during smooth scrolling.
+      // https://lodash.com/docs/4.17.10#throttle
+      // You could do like...
+      // window.addEventListener("scroll", () => {
+      //    _.throttle(doThatStuff, 100);
+      // });
+      // Only not doing it here to keep this Pen dependency-free.
+
+      window.addEventListener("scroll", event => {
+        let fromTop = window.scrollY;
+
+        mainNavLinks.forEach((link, index) => {
+          let section = document.getElementById(decodeURI(link.hash).substring(1));
+          let nextSection = null
+          if (mainNavLinks[index + 1]) {
+            nextSection = document.getElementById(decodeURI(mainNavLinks[index + 1].hash).substring(1));
+          }
+          if (section.offsetTop <= fromTop) {
+            if (nextSection) {
+              if (nextSection.offsetTop > fromTop) {
+                link.classList.add("current");
+              } else {
+                link.classList.remove("current");    
+              }
+            } else {
+              link.classList.add("current");
+            }
+          } else {
+            link.classList.remove("current");
+          }
+        });
+      });
+
+    </script>
+  </body>
+</html>
