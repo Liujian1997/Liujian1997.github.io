@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liujian1997.github.io</id>
     <title>Liujian&apos;Blog</title>
-    <updated>2020-04-01T02:17:49.934Z</updated>
+    <updated>2020-04-01T02:27:40.757Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liujian1997.github.io"/>
     <link rel="self" href="https://liujian1997.github.io/atom.xml"/>
@@ -17,11 +17,11 @@
         </link>
         <updated>2020-04-01T00:42:50.000Z</updated>
         <summary type="html"><![CDATA[<blockquote>
-<p>😀疫情期间学校要求打卡，本来只用签到一个，慢慢的成了两个。为了不浪费时间，于是在小伙伴群里写了个签到脚本并挂在nonbot机器人上，借此分享一下</p>
+<p>😀疫情期间学校要求打卡，本来只用签到一个，慢慢的成了两个。为了不浪费时间，于是在小伙伴群里写了个签到脚本并挂在nonebot机器人上，借此分享一下</p>
 </blockquote>
 ]]></summary>
         <content type="html"><![CDATA[<blockquote>
-<p>😀疫情期间学校要求打卡，本来只用签到一个，慢慢的成了两个。为了不浪费时间，于是在小伙伴群里写了个签到脚本并挂在nonbot机器人上，借此分享一下</p>
+<p>😀疫情期间学校要求打卡，本来只用签到一个，慢慢的成了两个。为了不浪费时间，于是在小伙伴群里写了个签到脚本并挂在nonebot机器人上，借此分享一下</p>
 </blockquote>
 <!-- more -->
 <h2 id="软件准备">软件准备</h2>
