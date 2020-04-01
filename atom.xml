@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liujian1997.github.io</id>
     <title>Liujian&apos;Blog</title>
-    <updated>2020-04-01T00:38:07.149Z</updated>
+    <updated>2020-04-01T02:11:46.928Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liujian1997.github.io"/>
     <link rel="self" href="https://liujian1997.github.io/atom.xml"/>
@@ -10,6 +10,72 @@
     <logo>https://liujian1997.github.io/images/avatar.png</logo>
     <icon>https://liujian1997.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Liujian&apos;Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[关于使用nonebot+酷Q+requests实现签到机器人功能]]></title>
+        <id>https://liujian1997.github.io/post/guan-yu-shi-yong-nonebotku-qrequests-shi-xian-qian-dao-ji-qi-ren-gong-neng/</id>
+        <link href="https://liujian1997.github.io/post/guan-yu-shi-yong-nonebotku-qrequests-shi-xian-qian-dao-ji-qi-ren-gong-neng/">
+        </link>
+        <updated>2020-04-01T00:42:50.000Z</updated>
+        <summary type="html"><![CDATA[<blockquote>
+<p>😀疫情期间学校要求打卡，本来只用签到一个，慢慢的成了两个。为了不浪费时间，于是在小伙伴群里写了个签到脚本并挂在nonbot机器人上，借此分享一下</p>
+</blockquote>
+]]></summary>
+        <content type="html"><![CDATA[<blockquote>
+<p>😀疫情期间学校要求打卡，本来只用签到一个，慢慢的成了两个。为了不浪费时间，于是在小伙伴群里写了个签到脚本并挂在nonbot机器人上，借此分享一下</p>
+</blockquote>
+<!-- more -->
+<h2 id="软件准备">软件准备</h2>
+<p>手机抓包软件：Stream<br>
+PC：酷Q机器人</p>
+<h2 id="开发环境">开发环境</h2>
+<p>Python 3.6</p>
+<h2 id="使用框架">使用框架</h2>
+<p>nonbot、requests（具体不在赘述）</p>
+<h2 id="签到实现思路">签到实现思路</h2>
+<ol>
+<li>第一步<br>
+按照我的想法，本质是一个Post提交数据的过程，只需要用requests库中的Post方法提交即可。</li>
+<li>第二步<br>
+我在电脑登陆打卡的网站，发现不能访问，然后我再用手机访问，发现可以正常访问。于是，我猜测是根据请求头浏览器的不同来限定。</li>
+<li>第三步<br>
+<img src="https://liujian1997.github.io/post-images/1585702674282.png" alt="" loading="lazy"><br>
+我使用Stream找到我手机浏览器的User-Agent通过requests的get方法，成功访问。</li>
+<li>第四步<br>
+使用一个没有签到过的账号，Stream开启抓包，然后进行签到，在数据包中优先查看Post方法。最终找到提交的数据<br>
+<img src="https://liujian1997.github.io/post-images/1585703066515.png" alt="" loading="lazy"><br>
+查看数据格式后提交即可</li>
+</ol>
+<pre><code class="language-python">re = requests.post(submit_url,json=json,headers=my_header)
+re.encoding=re.apparent_encoding
+print(re.text)
+</code></pre>
+<p>登陆查看发现成功签到</p>
+<h2 id="nonebot酷q构建机器人">nonebot+酷Q构建机器人</h2>
+<blockquote>
+<p>至此核心功能已经实现，为了方便小伙伴所以使用nonebot框架配合酷Q实现签到指令</p>
+</blockquote>
+<ol>
+<li>简单介绍<br>
+NoneBot 是一个基于 酷 Q 的 Python 异步 QQ 机器人框架，它会对 QQ 机器人收到的消息进行解析和处理，并以插件化的形式，分发给消息所对应的命令处理器和自然语言处理器，来完成具体的功能。<br>
+除了起到解析消息的作用，NoneBot 还为插件提供了大量实用的预设操作和权限控制机制，尤其对于命令处理器，它更是提供了完善且易用的会话机制和内部调用机制，以分别适应命令的连续交互和插件内部功能复用等需求。<br>
+NoneBot 在其底层与酷 Q 交互的部分使用 python-aiocqhttp 库，后者是 CoolQ HTTP API 插件 的一个 Python 异步 SDK，在 Quart 的基础上封装了与 CoolQ HTTP API 插件的网络交互。</li>
+<li>具体实现<br>
+<a href="https://cqp.cc/t/23253">酷Q下载地址</a></li>
+</ol>
+<p><img src="https://liujian1997.github.io/post-images/1585703768721.png" alt="" loading="lazy"><br>
+打开CQA.exe，登陆之后就可以了。<br>
+然后我们开始下载HTTP API 插件<br>
+<a href="https://github.com/richardchien/coolq-http-api/releasesx">HTTPAPI插件下载地址</a><br>
+下载完之后我们把文件直接放到酷q的插件目录<br>
+<img src="https://liujian1997.github.io/post-images/1585703931226.png" alt="" loading="lazy"><br>
+r然后右键酷q的图标，选择应用管理，启动CQ HTTP<br>
+<img src="https://liujian1997.github.io/post-images/1585704024966.png" alt="" loading="lazy"><br>
+启动后进入酷Q 的 data/app/io.github.richardchien.coolqhttpapi/config/ 目录，有一个.json 的文件，user-id为刚刚登陆的QQ号。修改这个文件的如下配置<br>
+<img src="https://liujian1997.github.io/post-images/1585704119015.png" alt="" loading="lazy"><br>
+关于如何使用，官方文档已经说的很详细了 <a href="https://nonebot.cqp.moe/guide/">nonebot说明文档点这里</a><br>
+代码：<a href="https://github.com/Liujian1997/Python-Project/">https://github.com/Liujian1997/Python-Project/</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Markdown常用语法]]></title>
         <id>https://liujian1997.github.io/post/markdown-chang-yong-yu-fa/</id>
@@ -2109,38 +2175,6 @@ indexElem index[maxSize];
 </ul>
 </li>
 </ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://liujian1997.github.io/post/hello-gridea/</id>
-        <link href="https://liujian1997.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
 ]]></content>
     </entry>
 </feed>
