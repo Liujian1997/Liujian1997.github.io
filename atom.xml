@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liujian1997.github.io</id>
     <title>Liujian&apos;Blog</title>
-    <updated>2020-04-03T16:46:36.774Z</updated>
+    <updated>2020-05-27T14:39:31.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liujian1997.github.io"/>
     <link rel="self" href="https://liujian1997.github.io/atom.xml"/>
@@ -10,6 +10,23 @@
     <logo>https://liujian1997.github.io/images/avatar.png</logo>
     <icon>https://liujian1997.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, Liujian&apos;Blog</rights>
+    <entry>
+        <title type="html"><![CDATA[考研二战开始！]]></title>
+        <id>https://liujian1997.github.io/post/kao-yan-er-zhan-kai-shi/</id>
+        <link href="https://liujian1997.github.io/post/kao-yan-er-zhan-kai-shi/">
+        </link>
+        <updated>2020-05-27T14:22:21.000Z</updated>
+        <summary type="html"><![CDATA[<p>去年考研失败归因于自己的贪玩，明天就要回学校了，开始二战，加油！💪</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>去年考研失败归因于自己的贪玩，明天就要回学校了，开始二战，加油！💪</p>
+<!-- more -->
+<p>疫情的原因，在家里带了五个月，在家里完成了毕业设计以及论文，再经过答辩后23岁的我即将毕业。但是我认为我的大学是不圆满的，我的第一次考研失败了。<br>
+在我的人生规划当中，我的打算是升学工作买房，我的目标是通过自己不依靠父母买房。但是我的贪玩导致第一次考研失败，最大的问题在于数学，仅仅考了50分。虽然在意料之中，但是遗憾和后悔在所难免，当眼睁睁的看着自己的同学达成自己的目标的时候，多希望我也那样，所以我不甘心，不甘心就这样。我要二战，我要读研，我要学计算机。说的再多不如静下心来去做，所以，加油吧！<br>
+写在这里，明年的这个时候是成是败，静待。<br>
+——致自己<br>
+2020.5.27晚22:33</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[关于使用nonebot+酷Q+requests实现签到机器人功能]]></title>
         <id>https://liujian1997.github.io/post/guan-yu-shi-yong-nonebotku-qrequests-shi-xian-qian-dao-ji-qi-ren-gong-neng/</id>
@@ -1979,201 +1996,6 @@ BstTree BstSearch(BstTree bst, ElemType x)
 <li>长度：表中最上层元素的个数</li>
 <li>深度：括号的最大层数</li>
 <li>表头（Head）和表尾（Tail）：当广义表非空时，第一个元素为表头，<strong>其余元素伪表尾</strong></li>
-</ul>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【数据结构】查找]]></title>
-        <id>https://liujian1997.github.io/post/cha-zhao/</id>
-        <link href="https://liujian1997.github.io/post/cha-zhao/">
-        </link>
-        <updated>2020-04-01T00:13:55.000Z</updated>
-        <summary type="html"><![CDATA[<blockquote>
-<p>🔑【数据结构】之<strong>查找</strong></p>
-</blockquote>
-]]></summary>
-        <content type="html"><![CDATA[<blockquote>
-<p>🔑【数据结构】之<strong>查找</strong></p>
-</blockquote>
-<!--more-->
-<h1 id="查找">查找</h1>
-<h2 id="查找基本概念-顺序查找法-折半查找法">查找基本概念、顺序查找法、折半查找法</h2>
-<h3 id="查找的基本概念">查找的基本概念</h3>
-<p>查找的定义：给定一个值k，在含有n个记录的表中找出关键字等于k的记录，若找到，则查找成功，返回该记录的信息或者该记录在表中的位置；若查找失败，返回相关的指示信息</p>
-<ul>
-<li><strong>平均比较次数（也称为 平均查找长度）</strong> ：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>S</mi><mi>L</mi><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>N</mi></msubsup><msub><mi>p</mi><mi>i</mi></msub><mo>∗</mo><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">ASL=\sum_{i=1}^Np_i*c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord mathdefault">L</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.2809409999999999em;vertical-align:-0.29971000000000003em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.981231em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight" style="margin-right:0.10903em;">N</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>（n是查找表中记录的个数，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">p_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是查找第i个记录的概率，在考研中一般取<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi></mrow><annotation encoding="application/x-tex">1/n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord mathdefault">n</span></span></span></span>；<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>c</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">c_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.58056em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>是找到第i个记录所需要进行比较的次数，即查找长度）</li>
-</ul>
-<h3 id="顺序查找法">顺序查找法</h3>
-<p>基本思路：从表的一段开始，顺序扫描线性表，依次与k值比较，若相等则查找成功</p>
-<pre><code class="language-c">int Search(int a[], int n, int k)
-{
-    int i;
-    for(i=1;i&lt;=n;++i)
-    {
-        if(a[i]==k)
-        return i;
-      return 0;  
-    }
-}
-</code></pre>
-<p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>S</mi><msub><mi>L</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">ASL_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为成功查找长度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>S</mi><msub><mi>L</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">ASL_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>为失败查找长度<br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>S</mi><msub><mi>L</mi><mn>1</mn></msub><mo>=</mo><msubsup><mo>∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></msubsup><mi>i</mi><mi mathvariant="normal">/</mi><mi>n</mi><mo>=</mo><mn>1</mn><mi mathvariant="normal">/</mi><mi>n</mi><mo>∗</mo><mi>n</mi><mo>∗</mo><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mi mathvariant="normal">/</mi><mn>2</mn><mo>=</mo><mo>(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo>)</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">ASL_1=\sum_{i=1}^n i/n=1/n*n*(n+1)/2=(n+1)/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.104002em;vertical-align:-0.29971000000000003em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">n</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">i</span><span class="mord">/</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord">/</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.46528em;vertical-align:0em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">/</span><span class="mord">2</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">)</span><span class="mord">/</span><span class="mord">2</span></span></span></span><br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>S</mi><msub><mi>L</mi><mn>2</mn></msub><mo>=</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">ASL_2=n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span><br>
-由此可得：成功和失败的时间复杂度都是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span></p>
-<h3 id="折半查找法">折半查找法</h3>
-<p>折半查找法要求线性表是有序的<br>
-基本思路：设R[low,……,high]，是当前查找区间，首先确定中间位置<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>i</mi><mi>d</mi><mo>=</mo><mo>(</mo><mi>l</mi><mi>o</mi><mi>w</mi><mo>+</mo><mi>h</mi><mi>i</mi><mi>g</mi><mi>h</mi><mo>)</mo><mi mathvariant="normal">/</mi><mn>2</mn></mrow><annotation encoding="application/x-tex">mid=(low+high)/2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">i</span><span class="mord mathdefault">d</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.01968em;">l</span><span class="mord mathdefault">o</span><span class="mord mathdefault" style="margin-right:0.02691em;">w</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">h</span><span class="mord mathdefault">i</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">h</span><span class="mclose">)</span><span class="mord">/</span><span class="mord">2</span></span></span></span>，然后与R[mid]比较，成功则返回，失败则确定新的查找区间，左或右</p>
-<pre><code class="language-c">int Bsearch(int R[], int low, int high, int k)
-{
-    int mid
-    while(low&lt;=high)
-    {
-        mid=(low+high)/2;
-        if(R[mid]==k)
-        return mid;
-        if(R[mid&gt;k]
-        high=mid-1;
-        else low=mid+1;
-    }
-    return 0;
-}
-</code></pre>
-<p>折半查找判定树的<strong>层数</strong>为<strong>比较次数</strong><br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>S</mi><msub><mi>L</mi><mn>1</mn></msub></mrow><annotation encoding="application/x-tex">ASL_1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">1</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>=比较次数之和/关键字数<br>
-<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi><mi>S</mi><msub><mi>L</mi><mn>2</mn></msub></mrow><annotation encoding="application/x-tex">ASL_2</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83333em;vertical-align:-0.15em;"></span><span class="mord mathdefault">A</span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span><span class="mord"><span class="mord mathdefault">L</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.30110799999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">2</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>计算时不把空指针的比较次数计算在内</p>
-<h3 id="分块查找索引查找">分块查找（索引查找）</h3>
-<p>块与块之间按照<strong>关键字有序</strong>的方式排列<br>
-索引表定义：</p>
-<pre><code class="language-c">typedef struct
-{
-    int key;
-    int low, high;
-}indexElem;
-indexElem index[maxSize];
-</code></pre>
-<p>第一步采用二分查找，第二部采用顺序查找<br>
-平均查找长度等于二分查找+顺序查找平均长度</p>
-<h2 id="二叉排序树与平衡二叉树">二叉排序树与平衡二叉树</h2>
-<h3 id="二叉排序树">二叉排序树</h3>
-<ul>
-<li>BST定义<br>
-二叉排序树或者是空数，或者是满足以下性质的二叉树</li>
-</ul>
-<ol>
-<li>若它的左子树不空，则左子树所有关键字的值<strong>小于</strong>根关键字的值</li>
-<li>若它的右子树不空，则右子树所有关键字的值<strong>大于</strong>根关键字的值</li>
-</ol>
-<ul>
-<li>BST的存储结构</li>
-</ul>
-<pre><code class="language-c">typedef struct BTNode
-{
-    int key;
-    struct BTNode *lchild;
-    struct BTNode *rchild;
-}BTNode;
-</code></pre>
-<ul>
-<li>二叉排序树的基本算法</li>
-</ul>
-<ol>
-<li>查找关键字</li>
-</ol>
-<pre><code class="language-c">BTNode* BSTSearch(BTNode *bt,int key)
-{
-    if(bt=NULL)
-    return NULL;
-    else 
-    {
-        if(bt-&gt;key==key)
-        return bt;
-        else if(key&lt;bt-&gt;key)
-        return BSTSearch(bt-&gt;lchild,key);
-        else
-        return BSTSearch(bt-&gt;rchild,key);
-    }
-}
-</code></pre>
-<ol start="2">
-<li>插入关键字<br>
-查找不成功的位置即为该关键字插入的位置</li>
-</ol>
-<pre><code class="language-c">int BSTInserrt(BTNode *&amp;bt, int key)
-{
-    if(bt==NULL)
-    {
-        bt=(BTNode*)malloc(sizeof(BTNode));
-        bt-&gt;lchild=bt-&gt;rchild=NULL;
-        bt-&gt;key=key;
-        return 1;
-    }
-    else
-    {
-        if(key==bt-&gt;key)
-        return 0;
-        else if(key&lt;bt-&gt;key)
-        return BSTInsert(bt-&gt;lchild,key);
-        else return BSTInsert(bt-&gt;rchild,key);
-    }
-}
-</code></pre>
-<ol start="3">
-<li>二叉排序树的构造算法</li>
-</ol>
-<pre><code class="language-c">void CreateBST(BTNode *&amp;bt,int key[],int n)
-{
-    int i;
-    bt=NULL;
-    for(i=0;i&lt;n;++i)
-    {
-        BSTInsert(bt,key[i]);
-    }
-}
-</code></pre>
-<ol start="4">
-<li>删除关键字的操作<br>
-画图即可</li>
-<li>叶子结点：直接删除</li>
-<li>只有左子树或者右子树</li>
-<li>有左右子树：顺着左子树的右指针最后一个替换（也可以是右子树的最左）</li>
-</ol>
-<hr>
-<h2 id="b-树的基本概念及其基本操作-b树的基本概念">B-树的基本概念及其基本操作、B+树的基本概念</h2>
-<h3 id="b-树b树的基本概念">B-树（B树）的基本概念</h3>
-<p>所有结点的个数称为B-树的阶，通常用m表示，从查找效率看：m&gt;=3；<br>
-一颗m阶的B-树或者一颗空数或满足：</p>
-<pre><code>  1. 每个结点**至多有m颗子树**
-  2. 若根结点不是叶子结点，则**至少有2颗子树**
-  3. 除根结点之外的所有非终端结点**至少有m/2颗子树**
-  4. 所有非终端结点包含**n个关键字和n+1颗子树**：$(n,A_0,K_1,A_1,...,K_n,A_n)$，其中关键字满足$A_0&lt;K_1&lt;A_1&lt;...&lt;K_n&lt;A_n$
-  5. 所有叶子在同一层，不含信息，表示查找失败
-</code></pre>
-<p>B+树：</p>
-<pre><code>  1. 差异：**n颗子树结点中含有n个关键字**；所有叶子结点中包含了全部关键字，且按大小顺序排列；所有非终端结点都是索引
-  2. 对B+树可以进行顺序查找又可以进行随机查找
-</code></pre>
-<hr>
-<h2 id="散列表">散列表</h2>
-<h3 id="散列表的概念">散列表的概念</h3>
-<p>根据给定的关键字来计算出关键字在表中的地址（H(key)指key在表中的地址，常用的除留余数法<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>H</mi><mo>(</mo><mi>k</mi><mi>e</mi><mi>y</mi><mo>)</mo><mo>=</mo><mi>k</mi><mi>e</mi><mi>y</mi><mi>M</mi><mi>O</mi><mi>D</mi><mi>p</mi></mrow><annotation encoding="application/x-tex">H(key)=key MOD p</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.08125em;">H</span><span class="mopen">(</span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mclose">)</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mord mathdefault">e</span><span class="mord mathdefault" style="margin-right:0.03588em;">y</span><span class="mord mathdefault" style="margin-right:0.10903em;">M</span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mord mathdefault" style="margin-right:0.02778em;">D</span><span class="mord mathdefault">p</span></span></span></span>）</p>
-<h3 id="散列表的建立方法以及冲突的解决方法">散列表的建立方法以及冲突的解决方法</h3>
-<ul>
-<li>冲突：散列函数可能会吧两个或两个以上的不同关键字映射到同一个地址</li>
-<li>装填因子：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>α</mi><mo>=</mo><mfrac><mi>n</mi><mi>m</mi></mfrac></mrow><annotation encoding="application/x-tex">\alpha=\frac{n}{m}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.0037em;">α</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.040392em;vertical-align:-0.345em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.695392em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">m</span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.394em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathdefault mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.345em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span>,n个记录，m个地址空间，哈希表的平均查找长度与记录个数n不直接相关，而是取决于装填因子和处理冲突的方法</li>
-<li>散列冲突的解决办法：
-<ul>
-<li>开放地址法
-<ul>
-<li>线性探测再散列</li>
-<li>二次探测再散列</li>
-<li>伪随机探测再散列</li>
-</ul>
-</li>
-<li>再哈希法</li>
-<li>链地址法</li>
-<li>建立公共溢出区</li>
-</ul>
-</li>
 </ul>
 ]]></content>
     </entry>
